@@ -11,4 +11,4 @@ RUN yarn install
 
 COPY . .
 
-CMD ["npm", "run", "start"]
+CMD ["yarn", "run", "start"]
