@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  api:
+  backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
     networks:
       - app-network
 
-  front:
+  frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
