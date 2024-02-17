@@ -2,10 +2,10 @@ FROM node:20.10.0
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY ./app/package*.json ./
 
-RUN yarn install
+RUN npm install
 
 COPY . .
 
-CMD ["yarn", "run", "start"]
+CMD ["npm", "run", "dev"]
