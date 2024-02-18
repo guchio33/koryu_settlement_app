@@ -1,10 +1,15 @@
-import Sidebar from './component/sidebar'
-import './App.css'
+// import React from 'react';
+import Sidebar from './component/Sidebar/Sidebar'
+import styles from './App.module.scss';
 
-function App() {
+
+function App(): JSX.Element{
   return (
     <>
-      <Sidebar></Sidebar>
+      <div className={styles.backgraund}>
+        <Sidebar></Sidebar>
+        <h1>ffff</h1>
+      </div>
     </>
   )
 }
