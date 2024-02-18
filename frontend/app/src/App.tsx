@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import React from 'react';
+import Sidebar from './components/Sidebar/Sidebar'
+import styles from './App.module.scss'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Input from './pages/Input'
+import History from './pages/History'
 
-function App() {
+
+
+function App(): JSX.Element{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className={styles.backgraund}>
+        <Sidebar></Sidebar>
+        <div className={styles.main}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/input" element={<Input />} />
+            <Route path="/history" element={<History />} />
+          </Routes>
+        </div>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App

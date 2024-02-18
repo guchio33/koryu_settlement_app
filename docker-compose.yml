@@ -8,7 +8,7 @@ services:
     volumes:
       - ./backend/app:/app
     ports:
-      - "3000:3000"
+      - "4000:3000"
     networks:
       - app-network
 
@@ -18,10 +18,13 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./frontend/app:/app
+      - /app/node_modules
     ports:
-      - "4000:3000"
+      - '5173:5173'
     networks:
       - app-network
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
 networks:
   app-network:
