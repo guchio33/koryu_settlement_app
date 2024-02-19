@@ -11,6 +11,7 @@ services:
       - "4000:3000"
     networks:
       - app-network
+    
   
   db:
     platform: linux/x86_64
@@ -26,6 +27,8 @@ services:
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
       - 3306:3306
+    networks:
+      - app-network  # 追加
 
   phpmyadmin:
     container_name: nestjs-demo-phpmyadmin
@@ -37,6 +40,8 @@ services:
       - PMA_PASSWORD=${PMA_PASSWORD}
     ports:
       - 8000:80
+    networks:
+      - app-network  # 追加
 
   frontend:
     build:
